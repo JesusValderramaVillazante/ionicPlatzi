@@ -15,4 +15,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
+  public goBack(): void{
+    this.navCtrl.pop();
+  }
 }

@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the ConversationPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-conversation',
@@ -18,8 +11,11 @@ export class ConversationPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
+  public ionViewDidLoad(): void {
     console.log('ionViewDidLoad ConversationPage');
   }
 
+  public goBack(): void{
+    this.navCtrl.pop();
+  }
 }
