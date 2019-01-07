@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import {HomePage} from "../home/home";
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -14,8 +14,10 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-
-  public goBack(): void{
+  goToHome() {
+    this.navCtrl.push(HomePage);
+  }
+  backToHome() {
     this.navCtrl.pop();
   }
 }

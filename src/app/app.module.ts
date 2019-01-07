@@ -8,33 +8,40 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LoginPageModule } from '../pages/login/login.module';
-import { ConversationPageModule } from '../pages/conversation/conversation.module';
-import { ProfilePageModule } from '../pages/profile/profile.module';
+import { LoginPage } from '../pages/login/login';
+import { ConversationPage } from '../pages/conversation/conversation';
+import { ProfilePage } from '../pages/profile/profile';
+import {UserService} from "../services/user";
+import {SearchPipe} from "../pipes/search";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    LoginPage,
+    ConversationPage,
+    ProfilePage,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    LoginPageModule,
-    ConversationPageModule,
-    ProfilePageModule
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    LoginPage,
+    ConversationPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserService
   ]
 })
 export class AppModule {}
